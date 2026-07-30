@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>buro 34 • дизайн и ИИ-ролики</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Экран загрузки (оптимизирован для всех экранов) -->
+  <div class="loader-screen" id="loader">
+    <div class="loader-backdrop"></div>
+    <div class="loader-container">
+      <div class="loader-logo-wrapper">
+        <span class="loader-number">34</span>
+        <div class="loader-accent-line"></div>
+      </div>
+      <p class="loader-subtitle">buro • generative studio</p>
+      <div class="loader-progress-wrapper">
+        <div class="loader-progress-track">
+          <div class="loader-progress-fill" id="progressFill"></div>
+        </div>
+        <span class="loader-percent" id="loaderPercent">0%</span>
+      </div>
+      <p class="loader-hint">Загружаем будущее...</p>
+    </div>
+    <div class="loader-particles" id="loaderParticles"></div>
+  </div>
+
+  <!-- Основной контент (изначально скрыт) -->
+  <div class="main-content" id="mainContent">
+
+    <!-- Анимированный фон -->
+    <div class="bg-animation">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <canvas id="particleCanvas"></canvas>
+    </div>
+
+    <!-- Курсор-эффект (только на десктопах) -->
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <div class="container">
+      <header>
+        <div class="logo">
+          <span class="logo-icon">◈</span> buro <span class="logo-number">34</span>
+        </div>
+        <nav id="mainNav">
+          <a href="#about" class="nav-link">О бюро</a>
+          <a href="#services" class="nav-link">Услуги</a>
+          <a href="#works" class="nav-link">Работы</a>
+          <a href="#process" class="nav-link">Процесс</a>
+          <a href="#contact" class="nav-link">Контакты</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Меню">☰</button>
+      </header>
+
+      <!-- Герой -->
+      <section class="hero" id="hero">
+        <div class="hero-badge reveal-element">✦ независимое ИИ-бюро с 2024</div>
+        <h1 class="reveal-element">
+          Генеративный<br><span class="accent">дизайн и видео</span>
+        </h1>
+        <p class="reveal-element">
+          Создаём имиджевые ролики, визуальные концепты и анимацию с помощью нейросетей. 
+          Быстро, смело, технологично.
+        </p>
+        <div class="hero-actions reveal-element">
+          <a href="#contact" class="cta-button">Обсудить проект</a>
+          <a href="#works" class="cta-button secondary">Смотреть работы</a>
+        </div>
+        <div class="hero-stats reveal-element">
+          <div class="stat"><span class="stat-number" data-count="47">0</span>+ проектов</div>
+          <div class="stat"><span class="stat-number" data-count="12">0</span> нейросетей</div>
+          <div class="stat"><span class="stat-number" data-count="8">0</span> лет опыта</div>
+        </div>
+      </section>
+
+      <!-- О бюро -->
+      <section class="about" id="about">
+        <div class="section-header reveal-element">
+          <span class="section-tag">01</span>
+          <h2>О бюро</h2>
+        </div>
+        <div class="about-grid">
+          <p class="about-text reveal-element">
+            buro 34 — это гибридная студия на стыке дизайна, технологий и искусственного интеллекта. 
+            Мы не просто используем нейросети — мы создаём авторские визуальные миры, где каждая 
+            деталь подчинена смыслу. Наш подход объединяет эстетику современных generative-систем 
+            с глубоким пониманием бренд-стратегии.
+          </p>
+          <div class="about-values reveal-element">
+            <div class="value-item">
+              <span class="value-icon">⚡</span>
+              <span>Скорость без потери качества</span>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">🎯</span>
+              <span>Точное попадание в Tone of Voice</span>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">🔮</span>
+              <span>Футуристическая эстетика</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Услуги -->
+      <section class="services" id="services">
+        <div class="section-header reveal-element">
+          <span class="section-tag">02</span>
+          <h2>Услуги</h2>
+        </div>
+        <div class="services-grid">
+          <div class="card reveal-element">
+            <span class="card-icon">🎬</span>
+            <h3>ИИ-ролики</h3>
+            <p>От сценария до финального монтажа — генеративные видео с характером и стилем. Используем Runway, Pika, Kling.</p>
+            <a href="#" class="card-link">Подробнее →</a>
+          </div>
+          <div class="card reveal-element">
+            <span class="card-icon">🧬</span>
+            <h3>Дизайн-системы</h3>
+            <p>Айдентика, гайдлайны и визуальные языки, спроектированные с участием Midjourney и Stable Diffusion.</p>
+            <a href="#" class="card-link">Подробнее →</a>
+          </div>
+          <div class="card reveal-element">
+            <span class="card-icon">⚡</span>
+            <h3>Motion & Анимация</h3>
+            <p>Плавные, гипнотические анимации, синтезированные нейросетями под ваш бренд.</p>
+            <a href="#" class="card-link">Подробнее →</a>
+          </div>
+          <div class="card reveal-element">
+            <span class="card-icon">🌐</span>
+            <h3>Веб-дизайн</h3>
+            <p>Интерактивные сайты с AI-графикой и генеративной анимацией. Новый уровень веб-эстетики.</p>
+            <a href="#" class="card-link">Подробнее →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Работы -->
+      <section class="works" id="works">
+        <div class="section-header reveal-element">
+          <span class="section-tag">03</span>
+          <h2>Избранные работы</h2>
+        </div>
+        <div class="works-grid">
+          <div class="work-card reveal-element" data-category="video">
+            <div class="work-preview">
+              <div class="ai-animation">
+                <span class="play-symbol">▶</span>
+              </div>
+            </div>
+            <div class="work-info">
+              <h4>Синтез моды</h4>
+              <span>AI fashion film · 2026</span>
+              <p>Генеративный показ для виртуального бренда</p>
+            </div>
+          </div>
+          <div class="work-card reveal-element" data-category="design">
+            <div class="work-preview">
+              <div class="ai-animation">
+                <span class="play-symbol">▶</span>
+              </div>
+            </div>
+            <div class="work-info">
+              <h4>Архитектура света</h4>
+              <span>Нейро-пространство · 2026</span>
+              <p>Визуальная концепция для техно-выставки</p>
+            </div>
+          </div>
+          <div class="work-card reveal-element" data-category="motion">
+            <div class="work-preview">
+              <div class="ai-animation">
+                <span class="play-symbol">▶</span>
+              </div>
+            </div>
+            <div class="work-info">
+              <h4>Цифровой организм</h4>
+              <span>Motion identity · 2025</span>
+              <p>Анимированная айдентика для AI-стартапа</p>
+            </div>
+          </div>
+        </div>
+        <div class="works-cta reveal-element">
+          <a href="#" class="cta-button secondary">Все проекты →</a>
+        </div>
+      </section>
+
+      <!-- Процесс -->
+      <section class="process" id="process">
+        <div class="section-header reveal-element">
+          <span class="section-tag">04</span>
+          <h2>Как мы работаем</h2>
+        </div>
+        <div class="process-steps">
+          <div class="step reveal-element">
+            <div class="step-number">01</div>
+            <h3>Брифинг и концепция</h3>
+            <p>Погружаемся в задачу, формируем визуальный сторителлинг и подбираем нейросети под проект.</p>
+          </div>
+          <div class="step reveal-element">
+            <div class="step-number">02</div>
+            <h3>Генерация и отбор</h3>
+            <p>Запускаем серии генераций, курируем результаты, собираем мудборд из лучших вариантов.</p>
+          </div>
+          <div class="step reveal-element">
+            <div class="step-number">03</div>
+            <h3>Пост-продакшн</h3>
+            <p>Доводим материал до совершенства: ретушь, монтаж, саунд-дизайн, цветокоррекция.</p>
+          </div>
+          <div class="step reveal-element">
+            <div class="step-number">04</div>
+            <h3>Передача и поддержка</h3>
+            <p>Отдаём исходники в нужных форматах, консультируем по использованию, остаёмся на связи.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Контакты -->
+      <section class="contact" id="contact">
+        <div class="section-header reveal-element">
+          <span class="section-tag">05</span>
+          <h2>Начать проект</h2>
+        </div>
+        <div class="contact-content reveal-element">
+          <p class="contact-text">
+            Расскажите о вашей идее — мы предложим решение на стыке дизайна и искусственного интеллекта.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:hello@buro34.ai" class="contact-link">hello@buro34.ai</a>
+            <a href="https://t.me/buro34" class="contact-link" target="_blank">Telegram</a>
+            <a href="#" class="contact-link">Behance</a>
+            <a href="#" class="contact-link">Instagram*</a>
+          </div>
+          <p class="contact-note">*принадлежит Meta, запрещена в РФ</p>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <span class="logo">◈ buro 34</span>
+            <p>Генеративный дизайн и ИИ-видео. Москва — мир.</p>
+          </div>
+          <div class="footer-links">
+            <a href="#about">О бюро</a>
+            <a href="#services">Услуги</a>
+            <a href="#works">Работы</a>
+            <a href="#contact">Контакты</a>
+            <a href="#">Политика</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 buro 34. Все права защищены.</span>
+          <span>нейросети • дизайн • движение</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
